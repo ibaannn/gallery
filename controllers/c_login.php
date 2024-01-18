@@ -53,20 +53,22 @@ class c_login
         }
     }
 
-    public function logout() {
+    public function logout()
+    {
         session_destroy();
 
         header("Location: ../index.php");
         exit;
     }
 
-    public function ganti($id, $email, $passwordold, $password) {
+    public function ganti($id, $email, $passwordold, $password)
+    {
         $conn = new c_conn();
-        if(isset($_POST['cpassword'])) {
+        if (isset($_POST['cpassword'])) {
             $query = "SELECT * FROM user WHERE Email = '$email'";
             $sql = mysqli_query($conn->conn(), $query);
             $data = mysqli_fetch_assoc($sql);
-            if($data) {
+            if ($data) {
                 if (password_verify($passwordold, $data['Password'])) {
                     $datas = mysqli_query($conn->conn(), "UPDATE user SET Password = '$password' WHERE UserID = $id");
                     session_destroy();
@@ -74,12 +76,35 @@ class c_login
                     document.location.href = '../index.php';
                     </script>";
                     exit;
-                }else {
+                } else {
                     echo "<script> alert('Password lama anda salah');
                     document.location.href = '../views/profil.php';
                     </script>";
                 }
             }
         }
+    }
+
+    public function update($id, $nama, $alamat, $kelamin, $img)
+    {
+        $conn = new c_conn();
+        $query = "UPDATE user SET NamaLengkap='$nama', Alamat='$alamat', JK='$kelamin', img='$img' WHERE UserID = $id";
+        $data = mysqli_query($conn->conn(), $query);
+    }
+
+    public function img($id)
+    {
+        $conn = new c_conn();
+        $query = "SELECT * FROM user WHERE UserID = $id";
+        $data = mysqli_query($conn->conn(), $query);
+        while ($row = mysqli_fetch_object($data)) {
+            $rows[] = $row;
+        }
+        return $rows;
+    }
+
+    public function delete($id) {
+        $conn = new c_conn();
+        $query = mysqli_query($conn->conn(), "UPDATE user SET img='icon.jpg' WHERE UserID = $id");
     }
 }

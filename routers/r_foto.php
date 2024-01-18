@@ -9,7 +9,7 @@ if ($_GET['aksi'] == 'tambah') {
     $date = $_POST['date'];
     $judul = $_POST['judul'];
     $desc = $_POST['desc'];
-    $idalbum = $_POST['idalbum'];
+    $dalbum = $_POST['dalbum'];
     $poto = $_FILES['poto']['name'];
     
     $can = array('jpg', 'png', 'jpeg');
@@ -20,14 +20,25 @@ if ($_GET['aksi'] == 'tambah') {
     if (in_array($ekstensi, $can) == true) {
         move_uploaded_file($tmp, '../assets/img/' . $poto);
 
-        $photoo->insert($id, $iduser, $date, $judul, $desc, $poto, $idalbum);
+        $photoo->insert($id, $iduser, $date, $judul, $desc, $dalbum, $poto);
 
-        echo "<script>alert ('Menu Telah Berhasil Di Ubah');
-        document.location.href = '../views/menu_dessert.php';
-        </script>";
+        echo "<script>alert ('Foto telah berhasil ditambahkan')</script>";
+        header("Location: ../views/dalbum.php?dalbum=" . $dalbum);
+    }else {
+        echo "<script>alert ('Tolong masukan foto')</script>";
+        header("Location: ../views/dalbum.php?dalbum=" . $dalbum);
     }
 }elseif ($_GET['aksi'] == 'delete') {
-    $id = $_GET['aksi'];
+    
+}elseif ($_GET['aksi'] == 'update') {
+    $FotoID = $_POST['FotoID'];
+    $JudulFoto = $_POST['JudulFoto'];
+    $DeskripsiFoto = $_POST['DeskripsiFoto'];
+    $dalbum = $_POST['dalbum'];
 
-    $photoo->delete_foto($id);
+    $photoo->update($FotoID, $JudulFoto, $DeskripsiFoto);
+    if ($photoo) {
+        echo "<script> alert('Data telah diubah')</script>";
+        header("Location: ../views/dalbum.php?dalbum=$dalbum");
+    }
 }

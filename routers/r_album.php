@@ -18,9 +18,12 @@ if ($_GET['aksi'] == 'tambah') {
 }elseif ($_GET['aksi'] == 'delete') {
     $id = $_GET['AlbumID'];
     $album->delete_album($id);
+
+    $dalbum = $_POST['dalbum'];
+    header("Location: ../views/dalbum.php?id=");
 }elseif ($_GET['aksi'] == 'update') {
     $id = $_POST['albumid'];
-    $nama = $_POST['nama'];
+    $nama = $_POST['nama']; 
     $desc = $_POST['desc'];
 
     $album->update_album($id, $nama, $desc);

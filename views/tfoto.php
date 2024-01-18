@@ -4,6 +4,11 @@ $title = "insert";
 $side = 'calbum';
 include_once "template/header.php";
 include_once "template/sidebar.php";
+$dalbum = $_GET['dalbum'];
+
+date_default_timezone_set('Asia/Jakarta');
+$waktu = date("Y-m-d H:i:s");
+
 
 ?>
 
@@ -15,7 +20,8 @@ include_once "template/sidebar.php";
                 <form class="row g-3 mt-3" action="../routers/r_foto.php?aksi=tambah" method="post" enctype="multipart/form-data">
                     <input type="text" name="id" id="id" hidden>
                     <input type="text" name="iduser" id="iduser" value="<?= $id ?>" hidden>
-                    <input type="text" name="date" id="date" value="<?= date("Y-m-d") ?>" hidden>
+                    <input type="text" name="dalbum" id="dalbum" value="<?= $dalbum ?>" hidden>
+                    <input type="text" name="date" id="date" value="<?= $waktu ?>" hidden>
                     <div class="col-md-12">
                         <input type="text" name="judul" class="form-control" placeholder="Judul Foto">
                     </div>

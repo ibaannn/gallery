@@ -83,7 +83,7 @@ include_once "template/sidebar.php";
                             <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
 
                                 <!-- Profile Edit Form -->
-                                <form action="../routers/r_login.php?aksi=edit" method="post" enctype="multipart/form-data">
+                                <form action="../routers/r_login.php?aksi=update" method="post" enctype="multipart/form-data">
                                     <div class="row mb-3">
                                         <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
                                         <div class="col-md-8 col-lg-9">
@@ -93,7 +93,7 @@ include_once "template/sidebar.php";
                                                     <label for="img" class="bi text-light bi-upload"></label>
                                                     <input type="file" name="img" id="img" class="bi bi-upload" hidden>
                                                 </div>
-                                                <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash"></i></a>
+                                                <a onclick="return confirm('Yakin ingin menghapus foto profil anda? (jika anda konfirmasi akan otomatis logout)')" href="../routers/r_login.php?UserID=<?= $id ?>&aksi=dimage" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -103,7 +103,7 @@ include_once "template/sidebar.php";
                                     <div class="row mb-3">
                                         <label for="username" class="col-md-4 col-lg-3 col-form-label">Username</label>
                                         <div class="col-md-8 col-lg-9">
-                                            <input name="username" type="text" class="form-control" id="username" value="<?= $username ?>">
+                                            <input name="username" type="text" class="form-control" id="username" value="<?= $username ?>" disabled>
                                         </div>
                                     </div>
 
@@ -117,7 +117,7 @@ include_once "template/sidebar.php";
                                     <div class="row mb-3">
                                         <label for="email" class="col-md-4 col-lg-3 col-form-label">Email</label>
                                         <div class="col-md-8 col-lg-9">
-                                            <input name="email" type="email" class="form-control" id="email" value="<?= $email ?>">
+                                            <input name="email" type="email" class="form-control" id="email" value="<?= $email ?>" disabled>
                                         </div>
                                     </div>
 
@@ -132,7 +132,7 @@ include_once "template/sidebar.php";
                                         <div class="row mb-3">
                                             <label class="col-md-4 col-lg-3 col-form-label">Gender</label>
                                             <div class="col-md-8 col-lg-9">
-                                                <select class="form-select" aria-label="Default select example">
+                                                <select name="kelamin" class="form-select" aria-label="Default select example">
                                                     <option value="perempuan">Female</option>
                                                     <option value="laki-laki">Male</option>
                                                 </select>
@@ -144,7 +144,7 @@ include_once "template/sidebar.php";
                                         <div class="row mb-3">
                                             <label class="col-md-4 col-lg-3 col-form-label">Gender</label>
                                             <div class="col-md-8 col-lg-9">
-                                                <select class="form-select" aria-label="Default select example">
+                                                <select name="kelamin" class="form-select" aria-label="Default select example">
                                                     <option value="laki-laki">Male</option>
                                                     <option value="perempuan">Female</option>
                                                 </select>
