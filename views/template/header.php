@@ -1,5 +1,6 @@
 <?php
 
+
 include_once "../controllers/c_login.php";
 $id = $_SESSION['UserID'];
 $nama = $_SESSION['NamaLengkap'];
@@ -9,6 +10,7 @@ $email = $_SESSION['Email'];
 $jk = $_SESSION['JK'];
 $img = $_SESSION['img'];
 
+// include_once "validasi.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">

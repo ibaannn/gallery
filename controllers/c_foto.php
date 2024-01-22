@@ -38,4 +38,14 @@ class c_foto {
         $conn = new c_conn();
         $query = mysqli_query($conn->conn(), "UPDATE foto SET JudulFoto='$JudulFoto', DeskripsiFoto='$DeskripsiFoto' WHERE FotoID = $FotoID");
     }
+
+    public function dashboard()  {
+        $conn = new c_conn();
+        $query = "SELECT foto.*, user.Username FROM foto INNER JOIN user ON foto.UserID = user.UserID ORDER BY FotoID DESC";
+        $data = mysqli_query($conn->conn(), $query);
+        while($row = mysqli_fetch_object($data)) {
+            $rows[] = $row;
+        }
+        return $rows;
+    }
 }

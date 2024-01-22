@@ -42,4 +42,18 @@ class c_album
         $conn = new c_conn();
         $query = mysqli_query($conn->conn(), "UPDATE album SET NamaAlbum='$nama', Deskripsi='$desc' WHERE AlbumID = $id");
     }
+
+    public function jumlah_data($bebas) {
+        $conn = new c_conn();
+        $query = mysqli_query($conn->conn(), "SELECT * FROM foto WHERE AlbumID = $bebas");
+        $data = mysqli_num_rows($query);
+        return $data;
+    }
+
+    public function foto($albumid) {
+        $conn = new c_conn();
+        $query = mysqli_query($conn->conn(), "SELECT LokasiFile FROM foto WHERE AlbumID = $albumid");
+        $data = mysqli_fetch_assoc($query);
+        return $data['LokasiFile'];
+    }
 }

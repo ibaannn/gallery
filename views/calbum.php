@@ -44,10 +44,14 @@ $waktu = date("Y-m-d H:i:s");
                                         <div class="card-body">
                                             <h5 class="card-title"><?= $baca->NamaAlbum ?></h5>
 
+                                            <?php $jumlahdata ?>
                                             <div class="d-flex align-items-center">
                                                 <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                                    <img src="../assets/img/icon.jpg" class="rounded-circle" width="80" height="68" alt="">
-
+                                                    <?php if ($tampil->jumlah_data($baca->AlbumID) > 0) { ?>
+                                                        <img src="../assets/img/<?= $tampil->foto($baca->AlbumID) ?>" class="rounded-circle" width="80" height="68" alt="">
+                                                    <?php } else { ?>
+                                                        <img src="../assets/img/icon.jpg" class="rounded-circle" width="80" height="68" alt="">
+                                                    <?php } ?>
                                                 </div>
                                                 <div class="ps-3">
                                                     <p class="text-dark"><?= $baca->Deskripsi ?></p>

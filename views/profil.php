@@ -191,11 +191,6 @@ include_once "template/sidebar.php";
                                         </div>
                                     </div>
 
-                                    <div>
-                                        <h5 style="color: red;">* </h5>
-                                        <p>* Are you sure you want to change your password?(if you change your password you will be logged out automatically)</p>
-                                    </div>
-
                                     <div class="text-center" onclick="return confirm('Are you sure want to change password? (If you change your password you will logged out automaticly!)')">
                                         <button type="submit" name="cpassword" class="btn btn-primary">Change Password</button>
                                     </div>
