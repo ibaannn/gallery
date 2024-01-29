@@ -414,6 +414,17 @@ h6 {
     opacity: 0;
   }
 
+  .row1 {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * .5);
+    padding-left: calc(var(--bs-gutter-x) * .7);
+    margin-top: var(--bs-gutter-y);
+    box-sizing: border-box;
+    display: block;
+  }
+
   .header .search-bar-show {
     top: 60px;
     visibility: visible;

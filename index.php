@@ -1,7 +1,7 @@
 <?php 
 
-// include_once "controllers/c_login.php";
-// include_once "views/validasi_login.php";
+include_once "controllers/c_login.php";
+include_once "views/validasi_login.php";
 
 ?>
 

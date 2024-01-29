@@ -173,21 +173,21 @@ include_once "template/sidebar.php";
                                     <div class="row mb-3">
                                         <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Current Password</label>
                                         <div class="col-md-8 col-lg-9">
-                                            <input name="passwordold" type="password" class="form-control" id="currentPassword">
+                                            <input name="passwordold" type="password" class="form-control" id="currentPassword" required>
                                         </div>
                                     </div>
 
                                     <div class="row mb-3">
                                         <label for="newPassword" class="col-md-4 col-lg-3 col-form-label">New Password</label>
                                         <div class="col-md-8 col-lg-9">
-                                            <input name="password" type="password" class="form-control" id="newPassword">
+                                            <input name="password" type="password" class="form-control" id="newPassword" required>
                                         </div>
                                     </div>
 
                                     <div class="row mb-3">
                                         <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">Re-enter New Password</label>
                                         <div class="col-md-8 col-lg-9">
-                                            <input name="confirm" type="password" class="form-control" id="renewPassword">
+                                            <input name="confirm" type="password" class="form-control" id="renewPassword" required>
                                         </div>
                                     </div>
 

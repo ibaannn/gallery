@@ -12,7 +12,7 @@ class c_komentar
     public function read_komentar($foto)
     {
         $conn = new c_conn();
-        $query = mysqli_query($conn->conn(), "SELECT komentarfoto.*, user.* FROM komentarfoto INNER JOIN user ON komentarfoto.UserID = user.UserID WHERE FotoID = $foto ORDER BY KomentarID DESC");
+        $query = mysqli_query($conn->conn(), "SELECT komentarfoto.*, user.* FROM komentarfoto INNER JOIN user ON komentarfoto.UserID = user.UserID WHERE FotoID = $foto");
         while ($row = mysqli_fetch_object($query)) {
             $rows[] = $row;
         }
@@ -31,7 +31,5 @@ class c_komentar
     public function delete($id) {
         $conn = new c_conn();
         $query = mysqli_query($conn->conn(), "DELETE FROM komentarfoto WHERE KomentarID = $id");
-
-        header("Location: ../views/gallery.php");
     }
 }

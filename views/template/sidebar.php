@@ -4,7 +4,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
         <li class="nav-item">
-            <a class="nav-link text-dark <?= $title == 'Gallery' ? '' : 'collapsed'; ?>" href="gallery.php">
+            <a class="nav-link text-dark <?= $side == 'dashboard' ? '' : 'collapsed'; ?>" href="gallery.php">
                 <i class="bi text-dark bi-grid"></i>
                 <span>Dashboard</span>
             </a>

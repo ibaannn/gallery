@@ -9,6 +9,7 @@ $username = $_SESSION['Username'];
 $email = $_SESSION['Email'];
 $jk = $_SESSION['JK'];
 $img = $_SESSION['img'];
+include_once "validasi.php";
 
 // include_once "validasi.php";
 ?>
@@ -58,7 +59,7 @@ $img = $_SESSION['img'];
     <header id="header" class="header fixed-top d-flex align-items-center">
 
         <div class="d-flex align-items-center justify-content-between">
-            <a href="index.html" class="logo d-flex align-items-center">
+            <a href="gallery.php" class="logo d-flex align-items-center">
                 <img src="../assets/img/logon.png" alt="">
                 <span class="d-none d-lg-block">Gallery</span>
             </a>
