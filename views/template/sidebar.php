@@ -13,7 +13,7 @@
         <li class="nav-item">
             <a class="nav-link text-dark <?= $title == 'profil' ? '' : 'collapsed'; ?>" href="profil.php">
                 <i class="bi text-dark bi-person"></i>
-                <span>Profil</span>
+                <span>Profile</span>
             </a>
         </li>
 

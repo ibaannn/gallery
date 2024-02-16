@@ -23,7 +23,7 @@ $waktu = date("Y-m-d H:i:s");
                     <input type="text" name="dalbum" id="dalbum" value="<?= $dalbum ?>" hidden>
                     <input type="text" name="date" id="date" value="<?= $waktu ?>" hidden>
                     <div class="col-md-12">
-                        <input type="text" name="judul" class="form-control" placeholder="Judul Foto">
+                        <input type="text" name="judul" class="form-control" placeholder="Tittle photo">
                     </div>
                     <div class="col-md-12">
                         <textarea name="desc" class="form-control" style="height: 70px" placeholder="Description"></textarea>

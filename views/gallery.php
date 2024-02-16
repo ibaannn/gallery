@@ -51,13 +51,15 @@ $waktu = date("Y-m-d H:i:s");
                         <div class="alert alert-dark alert-dismissible fade show" col-lg-12 role="alert">
                             <a class="nav-link nav-profile align-items-center pe-0" data-bs-toggle="dropdown">
                                 <img src="../assets/img/<?= $komen->img ?>" width="45" height="45" alt="Profile" class="rounded-circle">
-                                <span class="username"><?= $komen->Username ?>
-                                <span style="margin-left: 70%;">
-                                    <?= $komen->TanggalKomentar ?>
-                                </span>
+                                <span class="username" style="margin-left: 2%;"><?= $tampil->Username ?></span>
                                 <br>
-                                <span style="margin-left: 5%;"><?= $komen->IsiKomentar ?></span>
-                            
+                                    <span class="p" style="margin-left: 2%;"><?= $komen->IsiKomentar ?></span>
+                                    <span style="margin-left: 68%;">
+                                        <?= $komen->TanggalKomentar ?>
+                                    </span>
+                                <!-- <span style="margin-left: 5%;"></span> -->
+                                <!-- <br> -->
+
                                 <?php if ($id == $komen->UserID) { ?>
                                     <a href="../routers/r_komentar.php?KomentarID=<?= $komen->KomentarID ?>&aksi=hapus" class="btn-close"></a>
                                 <?php } ?>

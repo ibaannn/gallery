@@ -13,7 +13,7 @@ $tampil = new c_album();
 <main id="main" class="main">
     <center>
         <hr>
-        <h1>Create Album</h1>
+        <h1>Edit Album</h1>
         <div class="card col-md-8 mt-5">
             <div class="card-body">
                 <form class="row g-3 mt-3" action="../routers/r_album.php?aksi=update" method="post" enctype="multipart/form-data">

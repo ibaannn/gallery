@@ -20,7 +20,7 @@ if ($_GET['aksi'] == 'tambah') {
     $album->delete_album($id);
 
     $dalbum = $_POST['dalbum'];
-    header("Location: ../views/dalbum.php?id=");
+    header("Location: ../views/calbum.php");
 }elseif ($_GET['aksi'] == 'update') {
     $id = $_POST['albumid'];
     $nama = $_POST['nama']; 

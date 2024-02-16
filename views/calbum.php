@@ -16,7 +16,7 @@ $waktu = date("Y-m-d H:i:s");
 
 <main id="main" class="main">
     <?php if (empty($tampil->read_album($id))) {
-        echo '<h3 class="text-secondary"> You is not have a album </h3>';
+        echo "<h3 class='text-secondary'> You don't have an album </h3>";
     } else { ?>
         <section class="section dashboard">
             <div class="row">
@@ -82,7 +82,7 @@ $waktu = date("Y-m-d H:i:s");
                         <input type="text" name="nama" class="form-control" placeholder="Album Title" maxlength="15" required>
                     </div>
                     <div class="col-md-12">
-                        <input type="text" name="desc" class="form-control" placeholder="Deskripsi | Max 20 | Optional" maxlength="20">
+                        <input type="text" name="desc" class="form-control" placeholder="Description | Max 20 | Optional" maxlength="20">
                     </div>
                     <div class="text-center">
                         <button type="submit" class="btn btn-primary">Submit</button>
