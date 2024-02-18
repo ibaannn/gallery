@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 18 Jan 2024 pada 15.11
+-- Waktu pembuatan: 18 Feb 2024 pada 11.56
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.2.4
 
@@ -40,8 +40,7 @@ CREATE TABLE `album` (
 --
 
 INSERT INTO `album` (`AlbumID`, `NamaAlbum`, `Deskripsi`, `TanggalDibuat`, `UserID`) VALUES
-(29, 'Gibran', 'bapa regan', '2024-01-17 15:51:01', 11),
-(31, 'Joy', 'bapa regan', '2024-01-18 07:13:35', 11);
+(50, 'XII RPL1', 'SMK Sangkuriang 1', '2024-02-18 17:47:49', 17);
 
 -- --------------------------------------------------------
 
@@ -59,6 +58,13 @@ CREATE TABLE `foto` (
   `UserID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data untuk tabel `foto`
+--
+
+INSERT INTO `foto` (`FotoID`, `JudulFoto`, `DeskripsiFoto`, `TanggalUnggah`, `LokasiFile`, `AlbumID`, `UserID`) VALUES
+(36, 'Teman Teman', 'Kebersamaan', '2024-02-18 17:55:23', 'WhatsApp Image 2024-02-17 at 19.16.58.jpeg', 50, 17);
+
 -- --------------------------------------------------------
 
 --
@@ -73,6 +79,13 @@ CREATE TABLE `komentarfoto` (
   `TanggalKomentar` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data untuk tabel `komentarfoto`
+--
+
+INSERT INTO `komentarfoto` (`KomentarID`, `FotoID`, `UserID`, `IsiKomentar`, `TanggalKomentar`) VALUES
+(49, 36, 17, 'Halo teman teman', '2024-02-18 17:55:50');
+
 -- --------------------------------------------------------
 
 --
@@ -85,6 +98,13 @@ CREATE TABLE `likefoto` (
   `UserID` int(11) NOT NULL,
   `TanggalLIke` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `likefoto`
+--
+
+INSERT INTO `likefoto` (`LikeID`, `FotoID`, `UserID`, `TanggalLIke`) VALUES
+(49, 36, 17, '2024-02-18 17:56:14');
 
 -- --------------------------------------------------------
 
@@ -108,7 +128,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`UserID`, `Username`, `Password`, `Email`, `NamaLengkap`, `Alamat`, `JK`, `img`) VALUES
-(11, 'gibran', '$2y$10$2aFO2M7Kp47VsG6Yk41pju4UrXw64v1H0wOrPpytwpDZ9Cq36yjbi', 'gibran135@yahoo.com', 'sisca', 'sangkuriang', 'perempuan', 'icon.jpg');
+(17, 'gibran', '$2y$10$7/dx4cFnwRE.LdQ787t.W.CLfSje6EPGXJVXc.oBX23SSm1cXdNLW', 'gibran135@yahoo.com', 'gibran ilham b', 'cibabat', 'laki-laki', 'icon.jpg');
 
 --
 -- Indexes for dumped tables
@@ -159,31 +179,31 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `album`
 --
 ALTER TABLE `album`
-  MODIFY `AlbumID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `AlbumID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT untuk tabel `foto`
 --
 ALTER TABLE `foto`
-  MODIFY `FotoID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `FotoID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT untuk tabel `komentarfoto`
 --
 ALTER TABLE `komentarfoto`
-  MODIFY `KomentarID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `KomentarID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT untuk tabel `likefoto`
 --
 ALTER TABLE `likefoto`
-  MODIFY `LikeID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `LikeID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)

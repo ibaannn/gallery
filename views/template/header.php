@@ -66,14 +66,6 @@ include_once "validasi.php";
             <i class="bi bi-list toggle-sidebar-btn"></i>
         </div><!-- End Logo -->
 
-        <?php if ($title == 'Album') : ?>
-            <div class="search-bar">
-                <a href="tfoto.php?dalbum=<?= $_GET['dalbum'] ?>">
-                    <i class="bx bx-plus text-dark "></i>
-                </a>
-            </div>
-        <?php endif; ?>
-
         <nav class="header-nav ms-auto">
 
             <ul class="d-flex align-items-center">

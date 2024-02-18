@@ -20,7 +20,7 @@ if ($_GET['aksi'] == 'tambah') {
     if (in_array($ekstensi, $can) == true) {
         move_uploaded_file($tmp, '../assets/img/' . $poto);
 
-        $photoo->insert($id, $iduser, $date, $judul, $desc, $dalbum, $poto);
+        $photoo->insert($id=0, $iduser, $date, $judul, $desc, $dalbum, $poto);
 
         echo "<script>alert ('Foto telah berhasil ditambahkan')</script>";
         header("Location: ../views/dalbum.php?dalbum=" . $dalbum);

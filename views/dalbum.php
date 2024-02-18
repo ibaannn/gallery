@@ -14,7 +14,7 @@ $dalbum = $_GET['dalbum'];
 <main id="main" class="main">
     <div class="row">
         <?php if (empty($baru->read($dalbum))) { ?>
-            <h1 class="text-secondary">This album is empty</h1>
+            <h2 class="text-secondary">This album is empty</h2>
         <?php } else { ?>
             <?php foreach ($baru->read($dalbum) as $tapoto) : ?>
                 <div class="col-sm-3">
@@ -35,6 +35,9 @@ $dalbum = $_GET['dalbum'];
             <?php endforeach; ?>
         <?php } ?>
     </div>
+    <center>
+        <a href="tfoto.php?dalbum=<?= $_GET['dalbum'] ?>" class=" btn btn-secondary text-light"><i class="bx bx-plus-medical text-light"></i> Upload Photo</a>
+    </center>
 </main><!-- End #main -->
 
 

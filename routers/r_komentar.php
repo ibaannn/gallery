@@ -10,8 +10,8 @@ if ($_GET['aksi'] == 'tambah') {
     $IsiKomentar = $_POST['IsiKomentar'];
     $Tanggal = $_POST['Tanggal'];
     if ($IsiKomentar == "agus" or $IsiKomentar == "wati" or $IsiKomentar == "joy" or $IsiKomentar == "lili" or $IsiKomentar == "4gu5" or $IsiKomentar == "agu5" or $IsiKomentar == "4gus" or $IsiKomentar == "agus budiman") {
-        $IsiKomentar = "Arip aripin anjing";
-        $komen->insert_komentar($KomentarID, $FotoID, $UserID, $IsiKomentar, $Tanggal);
+        $IsiKomentar = "#######";
+        $komen->insert_komentar($KomentarID=0, $FotoID, $UserID, $IsiKomentar, $Tanggal);
         header("Location: ../views/gallery.php");
     } else {
         $komen->insert_komentar($KomentarID, $FotoID, $UserID, $IsiKomentar, $Tanggal);

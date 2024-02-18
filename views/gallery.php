@@ -19,7 +19,10 @@ $waktu = date("Y-m-d H:i:s");
 ?>
 
 <main id="main" class="main">
-    <?php foreach ($dashboard->dashboard() as $tampil) : ?>
+    <?php if (empty($dashboard->dashboard())) {
+        echo "<h2> No Post Yet </h2>";
+    }else
+    { foreach ($dashboard->dashboard() as $tampil) : ?>
         <div class="card">
             <div class="container">
                 <div class="user-block">
@@ -77,7 +80,8 @@ $waktu = date("Y-m-d H:i:s");
                 </form>
             </div>
         </div>
-    <?php endforeach ?>
+    <?php endforeach; ?>
+    <?php } ?>
 </main><!-- End #main -->
 
 

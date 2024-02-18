@@ -16,7 +16,7 @@ if ($_GET['aksi'] == 'register') {
 
     if ($password == $c_pass) {
         $password = password_hash($password, PASSWORD_DEFAULT);
-        $login->register($id, $username, $fullname, $email, $address, $password, $jk, $img);
+        $login->register($id=0, $username, $fullname, $email, $address, $password, $jk, $img);
         echo "<script> alert('Akun telah berhasil di registrasi!');
         document.location.href = '../index.php';
         </script>";

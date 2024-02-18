@@ -53,7 +53,9 @@ class c_foto
         while ($row = mysqli_fetch_object($data)) {
             $rows[] = $row;
         }
-        return $rows;
+        if (!empty($rows)) {
+            return $rows;
+        }
     }
 
     public function select($FotoID)

@@ -10,7 +10,7 @@ if ($_GET['aksi'] == 'tambah') {
     $date = $_POST['date'];
     $userid = $_POST['userid'];
 
-    $album->tambah_album($id, $nama, $desc, $date, $userid);
+    $album->tambah_album($id=0, $nama, $desc, $date, $userid);
 
     echo "<script> alert('Album telah dibuat');
     document.location.href = '../views/calbum.php';
