@@ -54,7 +54,7 @@ $waktu = date("Y-m-d H:i:s");
                         <div class="alert alert-dark alert-dismissible fade show" col-lg-12 role="alert">
                             <a class="nav-link nav-profile align-items-center pe-0" data-bs-toggle="dropdown">
                                 <img src="../assets/img/<?= $komen->img ?>" width="45" height="45" alt="Profile" class="rounded-circle">
-                                <span class="username" style="margin-left: 2%;"><?= $tampil->Username ?></span>
+                                <span class="username" style="margin-left: 2%;"><?= $komen->Username ?></span>
                                 <br>
                                     <span class="p" style="margin-left: 2%;"><?= $komen->IsiKomentar ?></span>
                                     <span style="margin-left: 68%;">

@@ -1,7 +1,7 @@
 <?php
 
 if (!empty($_SESSION['Username'])) {
-    header("Location: views/gallery.php");
+    echo "<script> document.location.href = 'views/gallery.php'; </script>";
 } else {
     echo "";
 }

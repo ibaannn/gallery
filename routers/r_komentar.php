@@ -4,7 +4,7 @@ include_once "../controllers/c_komentar.php";
 $komen = new c_komentar();
 
 if ($_GET['aksi'] == 'tambah') {
-    $KomentarID = $_POST['KomentarID'];
+    $KomentarID;
     $FotoID = $_POST['FotoID'];
     $UserID = $_POST['UserID'];
     $IsiKomentar = $_POST['IsiKomentar'];
@@ -14,7 +14,7 @@ if ($_GET['aksi'] == 'tambah') {
         $komen->insert_komentar($KomentarID=0, $FotoID, $UserID, $IsiKomentar, $Tanggal);
         header("Location: ../views/gallery.php");
     } else {
-        $komen->insert_komentar($KomentarID, $FotoID, $UserID, $IsiKomentar, $Tanggal);
+        $komen->insert_komentar($KomentarID=0, $FotoID, $UserID, $IsiKomentar, $Tanggal);
         header("Location: ../views/gallery.php");
     }
 } elseif ($_GET['aksi'] == 'hapus') {
@@ -29,7 +29,7 @@ if ($_GET['aksi'] == 'tambah') {
     $IsiKomentar = $_POST['IsiKomentar'];
     $Tanggal = $_POST['Tanggal'];
 
-    $komen->insert_komentar($KomentarID, $FotoID, $UserID, $IsiKomentar, $Tanggal);
+    $komen->insert_komentar($KomentarID=0, $FotoID, $UserID, $IsiKomentar, $Tanggal);
 
     header("Location: ../views/selectpoto.php?FotoID=$FotoID");
 } elseif ($_GET['aksi'] == 'hapusSelect') {

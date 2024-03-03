@@ -8,5 +8,6 @@ $dalbum = $_GET['dalbum'];
 
 $buang->delete_foto($id);
 
-echo "<script> alert('Foto telah dihapus');</script>";
-header("Location: ../views/dalbum.php?dalbum=$dalbum");
+echo "<script> alert('Foto telah dihapus');
+document.location.href = '../views/dalbum.php?dalbum=$dalbum';
+</script>";

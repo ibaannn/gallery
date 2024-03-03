@@ -1,6 +1,6 @@
 <?php
 
-
+error_reporting(0);
 include_once "../controllers/c_login.php";
 $id = $_SESSION['UserID'];
 $nama = $_SESSION['NamaLengkap'];
@@ -97,7 +97,7 @@ include_once "validasi.php";
                         </li>
 
                         <li>
-                            <a class="dropdown-item d-flex align-items-center" href="../routers/r_login.php?aksi=logout">
+                            <a class="dropdown-item d-flex align-items-center" href="../routers/r_login.php?aksi=logout" onclick="return confirm('Yakin ingin keluar dari aplikasi?')">
                                 <i class="bi bi-box-arrow-right"></i>
                                 <span>Sign Out</span>
                             </a>

@@ -22,7 +22,7 @@ if ($_GET['aksi'] == 'like') {
     $user = $_GET['UserID'];
     $foto = $_GET['FotoID'];
 
-    $like->like($id, $foto, $user, $date);
+    $like->like($id=0, $foto, $user, $date);
 
     header("Location: ../views/selectpoto.php?FotoID=$foto");
 } elseif ($_GET['aksi'] == 'deleteSelect') {

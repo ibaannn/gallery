@@ -1,8 +1,9 @@
 <?php
 
-error_reporting(E_ALL ^ E_NOTICE);
 if (!empty($username)) {
     echo "";
 } else {
-    header("Location: ../index.php");
+    echo "<script> alert('Silahkan Login Terlebih Dahulu');
+    document.locaton.href = '../index.php';
+    </script>";
 }

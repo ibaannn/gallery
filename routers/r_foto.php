@@ -22,11 +22,13 @@ if ($_GET['aksi'] == 'tambah') {
 
         $photoo->insert($id=0, $iduser, $date, $judul, $desc, $dalbum, $poto);
 
-        echo "<script>alert ('Foto telah berhasil ditambahkan')</script>";
-        header("Location: ../views/dalbum.php?dalbum=" . $dalbum);
+        echo "<script>alert ('Foto telah berhasil ditambahkan');
+        document.location.href = '../views/dalbum.php?dalbum=$dalbum';
+        </script>";
     }else {
-        echo "<script>alert ('Tolong masukan foto')</script>";
-        header("Location: ../views/dalbum.php?dalbum=" . $dalbum);
+        echo "<script>alert ('Tolong masukan foto');
+        document.location.href = '../views/dalbum.php?dalbum=$dalbum';
+        </script>";
     }
 }elseif ($_GET['aksi'] == 'delete') {
     
@@ -38,7 +40,8 @@ if ($_GET['aksi'] == 'tambah') {
 
     $photoo->update($FotoID, $JudulFoto, $DeskripsiFoto);
     if ($photoo) {
-        echo "<script> alert('Data telah diubah')</script>";
-        header("Location: ../views/dalbum.php?dalbum=$dalbum");
+        echo "<script> alert('Data telah diubah');
+        document.location.href = '../views/dalbum.php?dalbum=$dalbum';
+        </script>";
     }
 }
